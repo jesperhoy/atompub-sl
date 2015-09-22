@@ -100,9 +100,9 @@ If your IIS server has the WebDAV module installed you will need to remove it (d
 
 Download JH Software's AtomPub server library for ASP.NET v. 1.0 (August 30th 2010):
 
-Compiled for .NET 4.0:  [JHSoftware.AtomPub-DN4.zip](http://www.jhsoftware.dk/outbox/JHSoftware.AtomPub-DN4.zip) (12 KB)
+Compiled for .NET 4.0:  [JHSoftware.AtomPub-DN4.zip](https://github.com/jhsoftware/atompub-sl/releases/download/1.0/JHSoftware.AtomPub-DN4.zip) (12 KB)
 
-Compiled for .NET 2.0 - 3.5:  [JHSoftware.AtomPub-DN2.zip](http://www.jhsoftware.dk/outbox/JHSoftware.AtomPub-DN2.zip) (12 KB)
+Compiled for .NET 2.0 - 3.5:  [JHSoftware.AtomPub-DN2.zip](https://github.com/jhsoftware/atompub-sl/releases/download/1.0/JHSoftware.AtomPub-DN2.zip) (12 KB)
 
 ###Sample implementation
 
@@ -112,7 +112,7 @@ The sample is written in VB.NET (ASP.NET 4.0) and runs on IIS 7 and later. It is
 Note we have not been able to run this under the Visual Studio ASP.NET Development Server - only under the full IIS (some type of authentication issue).
 Download sample web-site:
 
- [JHSoftware.AtomPub.sample.zip](http://www.jhsoftware.dk/outbox/JHSoftware.AtomPub.sample.zip) (17 KB)
+ [JHSoftware.AtomPub.sample.zip](https://github.com/jhsoftware/atompub-sl/releases/download/1.0/JHSoftware.AtomPub.Sample.zip) (17 KB)
 
 ###References
 
