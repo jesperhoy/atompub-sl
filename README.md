@@ -96,7 +96,7 @@ If your IIS server has the WebDAV module installed you will need to remove it (d
          <remove name="WebDAVModule" />
 ```
 
-###Download
+###Download compiled version
 
 Download JH Software's AtomPub server library for ASP.NET v. 1.0 (August 30th 2010):
 
