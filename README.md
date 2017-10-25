@@ -5,7 +5,7 @@ This .NET library is intended for developers who want to implement the Atom Publ
 
 The library handles all communication with the client - HTTP requests/responses, authentication, parsing and formatting AtomPub XML messages, etc. However, web-site developers must add their own code to retrieve, store, update, and delete feed entries and associated media files from/to some type of permanent storage. This of course also means that developers are free to use any storage format and medium as they see fit.
 
-###Concepts
+### Concepts
 
 News articles / blog posts ("entries") and media files (images, video, etc.) are stored to / retrieved from different "collections".
 There are two types of collections - "EntryCollections" and "MediaCollections".
@@ -16,7 +16,7 @@ If you provide multiple collections, Windows Live Writer will ask the end-user w
 You may provide different collections to different users or based on other criteria.
 The word "collection" comes from the RFC describing the AtomPub protocol - where a "service document" lists "work spaces" containing "collections". This library supports any number of "collections", but only a single "work space" (we found no need for having more).
 
-###How to use it
+### How to use it
 
 Note: All class names from this library mentioned below are from the `JHSoftware.AtomPub` name space.
 
@@ -44,7 +44,7 @@ Finally enable AtomPub auto-discovery by linking to the handler from your site's
 
 Now you can point Windows Live Writer (or similar) to http://yoursite.com and you are ready to publish!
 
-###User authentication
+### User authentication
 
 User authentication is required for all publishing requests with this library.
 If your user accounts are stored in a database or similar, you can use the authentication feature built into this library (based on HTTP Basic Authentication).
@@ -61,7 +61,7 @@ A `system.security.Principal.WindowsIdentity` object for the authenticated Windo
 
 In overridden methods which have a `user` parameter, you should throw a `ForbiddenException` whenever that user is not permitted to perform the requested action. This ensures that an appropriate HTTP response status code (403) is returned to the client application.
 
-###About IDs
+### About IDs
 
 The library uses a simple string to `ID` field to identify collection, entry, and medialink items (required field for all 3 types). These IDs are used as parameters in various URLs passed to the client, and therefore should be relatively short.
 Collection IDs must be unique for the service. Entry and medialink IDs must be unique within the collection that they belong to.
@@ -71,18 +71,18 @@ Externally (in published feeds) each collection (feed) and each entry (article) 
 By default, the library generates a GUID for this by calculating a hash value based the collection and entry IDs and the the web-site's domain name (excluding www prefix).
 You can override this by setting the `OverrideGLobalID` field value ([IRI format](http://www.ietf.org/rfc/rfc3987.txt)) on each item. You should override if the feed may be accessed with different domain names or if you are using this to replace an existing feed (to preserve the global IDs).
 
-###About "Slugs"
+### About "Slugs"
 
 Two methods that you override, `EntryCollection.CreateEntry` and `MediaCollection.CreateMedia`, each take a "Slug" parameter. A "slug" is a suggested name for the resource being created. You can use this to as part of a generated URL or file name if you wish, but this is not required.
 Note that the slug parameter may be null/nothing if the client application did not provide a value.
 
-###Syndication
+### Syndication
 
 This library is primarily intended for publishing - that is creating / updating feed entries.
 However it does also provide objects/methods for Atom syndication - serving (read-only) feeds.
 The simplest way to do this is using an .ashx file (Generic Handler). In the `ProcessRequest` method, new up a `SyndicationCollection`, set its field values, and call its `Render` method.
 
-###NOT compatible with WebDAV
+### NOT compatible with WebDAV
 
 AtomPub uses HTTP "PUT" and "DELETE" methods to update/delete feed entries.
 The WebDAV protocol uses these same methods to update / delete web-site files directly.
@@ -96,7 +96,7 @@ If your IIS server has the WebDAV module installed you will need to remove it (d
          <remove name="WebDAVModule" />
 ```
 
-###Download compiled version
+### Download compiled version
 
 Download JH Software's AtomPub server library for ASP.NET v. 1.0 (August 30th 2010):
 
@@ -104,7 +104,7 @@ Compiled for .NET 4.0:  [JHSoftware.AtomPub-DN4.zip](https://github.com/jhsoftwa
 
 Compiled for .NET 2.0 - 3.5:  [JHSoftware.AtomPub-DN2.zip](https://github.com/jhsoftware/atompub-sl/releases/download/1.0/JHSoftware.AtomPub-DN2.zip) (12 KB)
 
-###Sample implementation
+### Sample implementation
 
 We have written a sample web-site that uses local web-server memory to store entries and media (meaning that a web-site restart wipes the data).
 Production code should obviously store data to a more durable medium such as a database, file system, CDN, etc.
@@ -114,7 +114,7 @@ Download sample web-site:
 
  [JHSoftware.AtomPub.sample.zip](https://github.com/jhsoftware/atompub-sl/releases/download/1.0/JHSoftware.AtomPub.Sample.zip) (17 KB)
 
-###References
+### References
 
 [RFC4287 - The Atom Syndication Format](http://www.ietf.org/rfc/rfc4287.txt)
 
